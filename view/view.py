@@ -15,8 +15,8 @@ class VisualizacaoLSB:
         fig_top = px.bar(top_df, x="Equipe", y=metrica, title=f"Top 10 equipes em {metrica}")
         col1.plotly_chart(fig_top, use_container_width=True)
 
-        #Gráfico de barras da média por equipe
-        fig_media = px.bar(media_df, x="Equipe", y=metrica, title=f"Média por equipe ({metrica})")
+        #Gráfico de barras da métrica escolhida por equipe
+        fig_media = px.bar(media_df, x="Equipe", y=metrica, title=f"Métrica por equipe ({metrica})")
         col2.plotly_chart(fig_media, use_container_width=True)
 
         #Mostra contagem de quantas ligas existem no ano selecionado
@@ -63,4 +63,5 @@ class VisualizacaoLSB:
         #Seção final: Exibe todos os dados do banco de dados filtrados
         st.markdown("## 🗃️ Banco de Dados (registros filtrados)")
         st.dataframe(df_filtrado.reset_index(drop=True))
+
 
